@@ -1,44 +1,38 @@
 "use client";
-import { useEffect, useState } from 'react';
+
+import { Suspense, useEffect, useState } from 'react';
 import { FaCheckCircle } from 'react-icons/fa';
+import { useSearchParams } from 'next/navigation';
 import { verifyPayment } from '@/utils';
 import { isAuthenticated } from '@/utils/auth';
-import { useSearchParams } from 'next/navigation';
 
-const Page = () => {
+function PaymentStatus() {
         const [success, setSuccess] = useState(false);
         const [message, setMessage] = useState<string>("");
-        const [reference, setReference] = useState<string | null>(null);
         const searchParams = useSearchParams();
-
-        useEffect(() => {
-                if (typeof window !== 'undefined') {
-                        const ref = searchParams.get('reference');
-                        setReference(ref);
-                }
-        }, [searchParams]);
+        const reference = searchParams.get('reference');
 
         useEffect(() => {
                 const checkPaymentStatus = async () => {
                         const getIsAuthenticated = await isAuthenticated();
-                        if (getIsAuthenticated && reference) {
-                                const paymentStatus = await verifyPayment(reference);
+                        if (getIsAuthenticated) {
+                                if (reference) {
+                                        const paymentStatus = await verifyPayment(reference);
 
-                                if (paymentStatus.status === 'success') {
-                                        setSuccess(true);
-                                        setMessage(paymentStatus.message);
-                                } else if (paymentStatus.status === 'failed') {
-                                        setSuccess(false);
-                                        setMessage(paymentStatus.message);
+                                        if (paymentStatus.status === 'success') {
+                                                setSuccess(true);
+                                                setMessage(paymentStatus.message);
+                                        } else if (paymentStatus.status === 'failed') {
+                                                setSuccess(false);
+                                                setMessage(paymentStatus.message);
+                                        }
                                 }
                         } else {
                                 console.log('User not authenticated');
                         }
                 };
 
-                if (reference) {
-                        checkPaymentStatus();
-                }
+                checkPaymentStatus();
         }, [reference]);
 
         return (
@@ -57,6 +51,12 @@ const Page = () => {
                         </div>
                 </div>
         );
-};
+}
 
-export default Page;
+export default function Page() {
+        return (
+                <Suspense fallback={<div>Loading...</div>}>
+                        <PaymentStatus />
+                </Suspense>
+        );
+}
