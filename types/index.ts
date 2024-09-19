@@ -50,11 +50,17 @@ export interface CarProps{
 
 export interface FilterProps {
         manufacturer: string;
-        year: number;
+        year: number | string;
         fuel: string;
         limit: number;
         model: string;
 }
+
+
+export interface HomeProps {
+        searchParams: FilterProps;
+      }
+      
 
 export interface UserDataProps{
         email: string;

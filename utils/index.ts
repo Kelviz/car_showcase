@@ -22,7 +22,7 @@ export async function fetchCars(filters: FilterProps) {
         const { manufacturer, year, model, limit, fuel } = filters;
         const apiBaseUrl = process.env.NEXT_PUBLIC_API_URL;
 
-        const response = await fetch(`${apiBaseUrl}/api/v1/cars?make=${manufacturer}&year=${year}&model=${model}&limit=${limit}&fuel=${fuel}`, {   
+        const response = await fetch(`${apiBaseUrl}/api/v1/cars/?make=${manufacturer}&year=${year}&model=${model}&limit=${limit}&fuel=${fuel}`, {   
                 headers: {
                         'Cache-Control': 'no-store',
                       },            
@@ -35,8 +35,8 @@ export async function fetchCars(filters: FilterProps) {
 
 export async function fetchBookings(title: string) {
         const apiBaseUrl = process.env.NEXT_PUBLIC_API_URL;
-        const currentBookingUrl = `${apiBaseUrl}/api/v1/bookings/current_bookings`
-        const expiredBookingUrl = `${apiBaseUrl}/api/v1/bookings/expired_bookings`
+        const currentBookingUrl = `${apiBaseUrl}/api/v1/bookings/current_bookings/`
+        const expiredBookingUrl = `${apiBaseUrl}/api/v1/bookings/expired_bookings/`
         const access_token = localStorage.getItem('access_token');
 
         if (title === "current") {
@@ -89,7 +89,7 @@ export async function fetchBookings(title: string) {
 
 export async function fetchUser() {
         const apiBaseUrl = process.env.NEXT_PUBLIC_API_URL;
-        const url = `${apiBaseUrl}/api/v1/users/me`
+        const url = `${apiBaseUrl}/api/v1/users/me/`
         const access_token = localStorage.getItem('access_token')
 
         try {
@@ -117,7 +117,7 @@ export async function fetchUser() {
 
 export async function bookCar(bookingData: bookingDataProps) {
         const apiBaseUrl = process.env.NEXT_PUBLIC_API_URL;
-        const url = `${apiBaseUrl}/api/v1/bookings`
+        const url = `${apiBaseUrl}/api/v1/bookings/`
         const access_token = localStorage.getItem('access_token')
         try {
                 const response = await fetch(url, {
@@ -151,7 +151,7 @@ export async function bookCar(bookingData: bookingDataProps) {
 
 export async function fetchBookingDetail(bookingId: number) {
         const apiBaseUrl = process.env.NEXT_PUBLIC_API_URL;
-        const url = `${apiBaseUrl}/api/v1/bookings/${bookingId}`
+        const url = `${apiBaseUrl}/api/v1/bookings/${bookingId}/`
         const access_token = localStorage.getItem('access_token')
 
         try {
@@ -179,7 +179,7 @@ export async function fetchBookingDetail(bookingId: number) {
 
 export async function confirmBooking(bookingConfirmationData: ConfirmBookingProps) {
         const apiBaseUrl = process.env.NEXT_PUBLIC_API_URL;
-        const url = `${apiBaseUrl}/api/payment/initiate`
+        const url = `${apiBaseUrl}/api/payment/initiate/`
         const access_token = localStorage.getItem('access_token')
 
         try {
@@ -213,7 +213,7 @@ export async function confirmBooking(bookingConfirmationData: ConfirmBookingProp
 
 export async function verifyPayment(reference: string | null) {
         const apiBaseUrl = process.env.NEXT_PUBLIC_API_URL;
-        const url = `${apiBaseUrl}/api/payment/verify`
+        const url = `${apiBaseUrl}/api/payment/verify/`
         const access_token = localStorage.getItem('access_token')
 
         try {
