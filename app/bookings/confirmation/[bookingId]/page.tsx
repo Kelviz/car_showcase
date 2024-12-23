@@ -55,7 +55,7 @@ const page = ({ params, }: { params: { bookingId: number } }) => {
                                                         <th scope="col" className="px-6 py-4">Status</th>
                                                 </tr>
                                         </thead>
-                                        <tbody className="text-white">
+                                        <tbody className="text-white">4e79pj0xrtzwdvsl
 
                                                 <BookingCard booking={booking} />
 

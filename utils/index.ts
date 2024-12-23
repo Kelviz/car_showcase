@@ -22,7 +22,7 @@ export async function fetchCars(filters: FilterProps) {
         const { manufacturer, year, model, limit, fuel } = filters;
         const apiBaseUrl = process.env.NEXT_PUBLIC_API_URL;
 
-        const response = await fetch(`${apiBaseUrl}/api/v1/cars/?make=${manufacturer}&year=${year}&model=${model}&limit=${limit}&fuel=${fuel}`, {   
+        const response = await fetch(`${apiBaseUrl}/api/v1/cars?make=${manufacturer}&year=${year}&model=${model}&limit=${limit}&fuel=${fuel}/`, {   
                 headers: {
                         'Cache-Control': 'no-store',
                       },            

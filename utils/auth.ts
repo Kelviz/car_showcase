@@ -4,7 +4,7 @@ import { UserDataProps } from "@/types";
 
 export async function loginUser(userData: UserDataProps) {
         const apiBaseUrl = process.env.NEXT_PUBLIC_API_URL;
-        const url = `${apiBaseUrl}/auth/login`
+        const url = `${apiBaseUrl}/auth/login/`
         try {
                 const response = await fetch(url, {
                         method: "POST",
@@ -41,7 +41,7 @@ export async function loginUser(userData: UserDataProps) {
 
 export async function RegisterUser(userData: UserDataProps) {
         const apiBaseUrl = process.env.NEXT_PUBLIC_API_URL;
-        const url = `${apiBaseUrl}/auth/register`
+        const url = `${apiBaseUrl}/auth/register/`
         try {
                 const response = await fetch(url, {
                         method: "POST",
@@ -106,7 +106,7 @@ export async function refreshAccessToken(refreshToken: string) {
 
 export async function isAuthenticated() {
         const apiBaseUrl = process.env.NEXT_PUBLIC_API_URL;
-        const url = `${apiBaseUrl}/auth/check-auth`
+        const url = `${apiBaseUrl}/auth/check-auth/`
         console.log("my access token", localStorage.getItem('access_token'))
         const access_token = localStorage.getItem('access_token')
         const refresh_token = localStorage.getItem('refresh_token')
