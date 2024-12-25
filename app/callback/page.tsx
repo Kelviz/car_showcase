@@ -38,7 +38,7 @@ function PaymentStatus() {
         return (
                 <div className='booking'>
                         <div className='w-full h-[100vh] flex-center'>
-                                <div className='w-[30%] flex-center h-[20vh] p-4 bg-white shadow-lg rounded-lg text-center'>
+                                <div className='lg:w-[30%] md:w-[50%] w-[80%] flex-center h-[20vh] p-4 bg-white shadow-lg rounded-lg text-center'>
                                         {success ? (
                                                 <p className='text-green-600 font-bold text-[20px] flex-center flex-col'>
                                                         <FaCheckCircle style={{ color: 'green', fontSize: '50px' }} />

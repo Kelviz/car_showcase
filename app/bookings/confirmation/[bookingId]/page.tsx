@@ -46,8 +46,7 @@ const page = ({ params, }: { params: { bookingId: number } }) => {
 
 
         return (
-                <div className='booking padding-x'>
-                        <h1 className='text-white font-bold w-full text-center my-[3rem] text-2xl'>Confirm Booking</h1>
+                <div className='booking padding-x mt-[3rem]'>
 
                         <div className='w-full   flex lg:flex-row md:flex-row  flex-col-reverse justify-between items-start'>
 
