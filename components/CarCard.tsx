@@ -67,7 +67,7 @@ const CarCard = ({ car }: CarCardProps) => {
                                                 title="View More"
                                                 containerStyles='lg:w-auto md:w-auto w-[55%] py-[16px] rounded-full bg-primary-blue'
                                                 textStyles="text-white text-[14px] leading-[17px] font-bold"
-                                                rightIcon="/right-arrow.svg"
+
                                                 handleClick={() => setIsOpen(true)}
 
                                         />

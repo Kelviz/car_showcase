@@ -76,14 +76,16 @@ const page = ({ params, }: { params: { bookingId: number } }) => {
                                                 <p className='text-gray-200'>{booking?.status}</p>
                                         </div>
 
+                                        {booking?.status === 'Pending' && (
+                                                <CustomButton
+                                                        title="Confirm Booking"
+                                                        containerStyles='bg-primary-blue rounded-full  min-w-[130px] text-center p-3 mt-[3rem]'
+                                                        textStyles="text-white text-[14px] font-bold"
+                                                        handleClick={() => setIsOpen(true)}
 
-                                        <CustomButton
-                                                title="Confirm Booking"
-                                                containerStyles='bg-primary-blue rounded-full  min-w-[130px] text-center p-3 mt-[3rem]'
-                                                textStyles="text-white text-[14px] font-bold"
-                                                handleClick={() => setIsOpen(true)}
+                                                />
 
-                                        />
+                                        )}
 
                                 </div>
 
