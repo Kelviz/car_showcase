@@ -62,10 +62,10 @@ const CarCard = ({ car }: CarCardProps) => {
                                         </div>
                                 </div>
 
-                                <div className='car-card__btn-container'>
+                                <div className='car-card__btn-container lg:mt-0 mt-4'>
                                         <CustomButton
                                                 title="View More"
-                                                containerStyles='w-auto py-[16px] rounded-full bg-primary-blue'
+                                                containerStyles='lg:w-auto md:w-auto w-[55%] py-[16px] rounded-full bg-primary-blue'
                                                 textStyles="text-white text-[14px] leading-[17px] font-bold"
                                                 rightIcon="/right-arrow.svg"
                                                 handleClick={() => setIsOpen(true)}
@@ -74,7 +74,7 @@ const CarCard = ({ car }: CarCardProps) => {
 
                                         <CustomButton
                                                 title="Book Now"
-                                                containerStyles='w-auto py-[16px] rounded-full bg-white'
+                                                containerStyles='lg:w-auto md:w-auto w-[55%] py-[16px] rounded-full bg-white'
                                                 textStyles="text-primary-blue text-[14px] leading-[17px] font-bold"
 
                                                 handleClick={() => setIsBookingOpen(true)}

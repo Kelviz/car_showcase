@@ -51,55 +51,34 @@ const Navbar = () => {
 
 
         return (
-                <header className='w-full absolute z-10'>
+                <header className='w-full'>
 
-                        <nav className='max-w-[1440px] mx-auto flex justify-between items-center sm:px-16 px-6 py-4 relative'>
-                                <Link href="/" className='flex justify-center items-center p-2 bg-white' >
-                                        <Image src="/logo.svg"
+                        <nav className='max-w-[1440px] flex justify-between items-center px-2 lg:px-6 md:px-6 py-4 relative'>
+                                <Link href="/" className='flex lg:w-[150px] lg:h-[110px] md:w-[120px] md:h-[90px]  w-[100px] h-[70px] justify-start items-start  rounded-md' >
+                                        <Image src="/car-logo.png"
                                                 alt='Car Hub Logo'
-                                                width={118}
-                                                height={18}
-                                                className='object-contain lg:w-[150px] w-[100px]' />
+                                                width={300}
+                                                height={200}
+                                                className='object-contain w-full h-full' />
                                 </Link>
 
 
                                 {userIsAuthenticated ? (
                                         <>
-                                                <div className="w-[30%] p-2 hidden lg:flex justify-end items-center gap-3">
-                                                        <Link href="/bookings" className="bg-black text-white bg-opacity-30 lg:text-[14px] text-[12px] lg:w-[150px] w-[120px] text-center font-bold p-2  rounded-full">Bookings</Link>
-
-                                                        <CustomButton
-                                                                title="Sign Out"
-                                                                containerStyles='lg:w-[150px] w-[120px] bg-black bg-opacity-30 px-3 py-5 border-none rounded-full border border-white'
-                                                                textStyles="text-white lg:text-[14px] text-[12px] leading-[17px] font-bold"
-                                                                handleClick={handleUserLogout}
-
-                                                        />
+                                                <div className="w-[30%] p-2 flex justify-end items-center gap-3">
+                                                        <Link href="/bookings" className="bg-gray-700 text-white  lg:text-[14px] text-[12px] lg:w-[150px] w-[120px] text-center font-bold p-3  rounded-full">Bookings</Link>
 
 
 
                                                 </div>
 
 
-                                                <FcMenu className="text-[35px] lg:hidden text-white" onClick={handleMenue} />
-                                                {showMenu && (
-                                                        <div className="absolute lg:hidden right-[3.5rem] bg-primary-black p-2 top-[4rem] w-[34%]  flex flex-col">
-                                                                <Link href='/bookings' className="text-white text-[18px] font-bold my-2" onClick={() => setShowMenu(false)}>Bookings</Link>
 
-                                                                <p
-                                                                        onClick={handleUserLogout}
-                                                                        className="text-white text-[18px] font-bold my-2"
-
-
-                                                                >Sign Out</p>
-
-                                                        </div>
-                                                )}
                                         </>
 
                                 ) : (
 
-                                        <Link href="/login" className='text-primary-blue rounded-full bg-white min-w-[130px] text-center p-3'>Sign In</Link>
+                                        <Link href="/login" className='text-white font-bold rounded-full bg-gray-700 w-auto  text-center py-3 px-8 shadow-sm'>Sign In</Link>
                                 )}
 
 

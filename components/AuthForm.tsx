@@ -3,7 +3,7 @@ import { authInputProps } from '@/types';
 
 const AuthForm = ({ type, name, value, placeholder, handleOnchange }: authInputProps) => {
         return (
-                <div className="w-full mt-4 flex flex-col gap-4">
+                <div className="w-full p-2 mt-4 flex flex-col gap-4">
                         <input
                                 type={type}
                                 name={name}

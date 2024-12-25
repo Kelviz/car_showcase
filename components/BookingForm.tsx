@@ -133,9 +133,9 @@ const BookingForm = ({ isBookingOpen, closeModal, car }: CarDetailsProps) => {
                                                                                 <h2 className='text-23 font-bold'>Available: {availability}</h2>
                                                                                 <form className='w-full flex flex-col'>
 
-                                                                                        <div className='w-full flex-between'>
+                                                                                        <div className='w-full flex-col flex-between mt-2 gap-2'>
 
-                                                                                                <div>
+                                                                                                <div className='w-full'>
                                                                                                         <label className="block text-white mb-2" htmlFor="startDate">
                                                                                                                 Start Date
                                                                                                         </label>
@@ -150,7 +150,7 @@ const BookingForm = ({ isBookingOpen, closeModal, car }: CarDetailsProps) => {
                                                                                                 </div>
 
 
-                                                                                                <div>
+                                                                                                <div className='w-full'>
                                                                                                         <label className="block text-white mb-2" htmlFor="endDate">
                                                                                                                 End Date
                                                                                                         </label>

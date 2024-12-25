@@ -31,7 +31,7 @@ export interface verifyPaymentProps {
 export interface CarProps{
         id: number;
         city_mpg: number;
-        class: string;
+        car_class: string;
         combination_mpg: number;
         cylinders: number;
         displacement: number;
@@ -71,6 +71,7 @@ export interface UserDataProps{
 }
 
 export interface BookingProps{
+        id: number;
         car: string;
         start_date: string;
         end_date: string;
@@ -78,6 +79,7 @@ export interface BookingProps{
         status: string;
         car_make: string;
         car_model: string;
+        car_details?: CarProps;
 }
 
 export interface bookingDataProps{

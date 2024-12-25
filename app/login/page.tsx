@@ -86,7 +86,7 @@ const page = () => {
                                 <div className="login flex-center">
                                         <ResponseMessage message={message} containerStyle={containerStyle} />
 
-                                        <div className="w-[370px] flex-center flex-col">
+                                        <div className="lg:w-[30%] md:w-[50%] w-[90%]  flex-center flex-col p-2">
                                                 <h1 className="text-4xl font-extrabold text-white">Sign In</h1>
                                                 <AuthForm
                                                         type="email"

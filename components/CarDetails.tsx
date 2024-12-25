@@ -80,12 +80,13 @@ const CarDetails = ({ isOpen, closeModal, car }: CarDetailsProps) => {
 
                     <div className="mt-3 flex flex-wrap gap-4">
                       {Object.entries(car).map(([key, value]) => (
-                        key !== "image" && (
+                        key !== "image" && key !== "id" && (
                           <div className="flex justify-between gap-5 w-full text-right" key={key}>
                             <h4 className="text-white capitalize">{key.split("_").join(" ")}</h4>
-                            <p className="text-white font-semibold">{value}</p>
+                            <p className="text-white font-semibold"> {key === "available" ? (value ? "yes" : "no") : value}</p>
                           </div>
                         )
+
                       ))}
                     </div>
                   </div>

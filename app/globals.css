@@ -21,7 +21,7 @@ body {
 }
 
 .padding-x {
-  @apply sm:px-16 px-6;
+  @apply px-3 lg:px-9 md:px-6;
 }
 
 .padding-y {
@@ -67,7 +67,7 @@ body {
 }
 
 .hero__image-overlay {
-  @apply absolute xl:-top-24 xl:-right-1/2 -right-1/4 bg-hero-bg bg-repeat-round -z-10 w-full xl:h-screen h-[590px] overflow-hidden;
+  @apply absolute xl:-top-24 xl:-right-1/2 -right-1/4 bg-hero-bg bg-repeat-round -z-10 w-full xl:h-screen h-[590px] md:h-[590px] lg:h-[590px]  overflow-hidden;
 }
 /* END: Hero styles */
 
@@ -96,7 +96,7 @@ body {
 
 /* START: Car Card styles */
 .car-card {
-  @apply flex flex-col p-6 justify-center items-start text-white bg-primary-black-100 hover:bg-primary-black hover:shadow-md rounded-3xl;
+  @apply flex flex-col h-[440px] p-6 justify-center items-start text-white bg-primary-black-100 hover:bg-primary-black hover:shadow-md rounded-3xl;
 }
 
 .car-card__content {
@@ -136,7 +136,13 @@ body {
 }
 
 .car-card__btn-container {
-  @apply hidden group-hover:flex justify-between items-center absolute bottom-0 w-full z-10;
+  @apply hidden group-hover:flex
+   lg:flex-row md:flex-row
+    flex-col justify-between
+     items-center absolute bottom-0 w-full z-10 top-[-40px]
+     gap-4
+     lg:gap-0
+     md:gap-0;
 }
 /* END: Car Card styles */
 

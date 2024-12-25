@@ -70,48 +70,6 @@ const page = () => {
         return (
 
                 <div className='booking'>
-                        <div className='w-full relative mx-auto flex justify-between items-center sm:px-16 px-6 py-4'>
-                                <div className='booking-heading'>
-                                        <div className='booking-heading__cover'>
-
-                                                <div className='w-full text-center flex-col flex-center '>
-                                                        <p className='text-[18px] sm:text-[14px] lg:text-[28px] text-white'>Your Journey Starts Here</p>
-                                                        <p className='text-[16px] sm:text-[13px] lg:text-[20px] text-primary-blue'>Book Your Perfect Ride Today</p>
-
-                                                </div>
-                                                <div className='w-full flex-between'>
-                                                        <Image src="/booking-bg-1.png"
-                                                                alt='Car 1'
-                                                                width={300}
-                                                                height={300}
-                                                                className='object-contain booking-heading__img h-[190px]' />
-
-                                                        <Image src="/booking-bg-2.png"
-                                                                alt='Car 2'
-                                                                width={300}
-                                                                height={300}
-                                                                className='object-contain booking-heading__img  h-[190px]' />
-
-                                                        <Image src="/booking-bg-3.png"
-                                                                alt='Car 3'
-                                                                width={300}
-                                                                height={300}
-                                                                className='object-contain booking-heading__img h-[190px]' />
-                                                </div>
-
-
-
-
-
-
-
-                                        </div>
-                                </div>
-
-                        </div>
-
-
-
 
                         <div className="w-full flex flex-col sm:px-16 px-6 py-4">
                                 <h2 className='font-bold text-white text-[25px]'>Bookings</h2>
@@ -184,26 +142,14 @@ const page = () => {
                                 <div className='w-full flex flex-col mt-6'>
                                         {!isDataEmpty ? (
                                                 <>
-                                                        <table className="w-full text-left text-sm font-light">
-                                                                <thead className="border-b border-gray-700 bg-primary-black text-white">
-                                                                        <tr>
+                                                        <div className="w-full flex gap-4 text-white flex-col">
 
-                                                                                <th scope="col" className="text-[13px] lg:font-medium px-2 py-4">Car Name</th>
-                                                                                <th scope="col" className="text-[13px] lg:font-medium px-2 py-4">Start Date</th>
-                                                                                <th scope="col" className="text-[13px] lg:font-medium px-2 py-4">End Date</th>
-                                                                                <th scope="col" className="text-[13px] lg:font-medium px-2 py-4">Price</th>
-                                                                                <th scope="col" className="text-[13px] lg:font-medium px-2 py-4">Status</th>
-
-                                                                        </tr>
-                                                                </thead>
-                                                                <tbody className="text-white">
-                                                                        {bookings?.map((booking) => (
-                                                                                <BookingCard booking={booking} />
-                                                                        ))}
+                                                                {bookings?.map((booking) => (
+                                                                        <BookingCard booking={booking} />
+                                                                ))}
 
 
-                                                                </tbody>
-                                                        </table>
+                                                        </div>
 
                                                 </>
                                         ) : (

@@ -1,6 +1,9 @@
+'use client'
 import Image from "next/image";
 import { FaUser } from 'react-icons/fa';
 import { Fragment } from "react";
+import { logOut } from "@/utils/auth";
+import { useRouter } from "next/navigation";
 import {
   Dialog,
   DialogPanel,
@@ -8,6 +11,7 @@ import {
   TransitionChild,
 } from "@headlessui/react";
 import { UserDataProps } from "@/types";
+import CustomButton from "./CustomButton";
 
 
 
@@ -19,6 +23,14 @@ interface ProfileDetailsProps {
 }
 
 const ProfileDetails = ({ isOpen, closeModal, profile }: ProfileDetailsProps) => {
+  const router = useRouter();
+
+  const handleUserLogout = () => {
+
+    logOut()
+    router.push('/')
+
+  }
 
 
 
@@ -74,7 +86,15 @@ const ProfileDetails = ({ isOpen, closeModal, profile }: ProfileDetailsProps) =>
                     <p className="text-white mt-3">Email: {profile?.email}</p>
                     <p className="text-white mt-3">Phone: {profile?.phone}</p>
 
-                    <div className="mt-3 flex flex-wrap gap-4">
+                    <div className="mt-3 flex justify-center flex-wrap gap-4">
+                      <CustomButton
+                        title="Sign Out"
+                        containerStyles='lg:w-[150px] w-[120px] bg-gray-700 px-3 py-5 border-none rounded-full border border-white'
+                        textStyles="text-white lg:text-[14px] text-[12px] leading-[17px] font-bold"
+                        handleClick={handleUserLogout}
+
+
+                      />
 
                     </div>
                   </div>
